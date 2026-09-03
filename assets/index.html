@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>刘维丽 · 导演作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0c;
+      --bg-2: #101014;
+      --panel: #141418;
+      --panel-2: #1a1a1f;
+      --line: rgba(255, 255, 255, .08);
+      --text: #f2f0ec;
+      --muted: #9b9a94;
+      --muted-2: #6f6e69;
+      --accent: #e63946;
+        --accent-dark: #b91c2c;
+        --radius: 18px;
+      /* cinematic red accent */
+      --radius: 18px;
+      --serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+      --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+
+      .sec-light {
+        --bg: #e8e6e1;
+        --bg-2: #efede8;
+        --panel: #f3f1ec;
+        --panel-2: #faf9f6;
+        --line: rgba(0, 0, 0, .12);
+        --text: #1c1c20;
+        --muted: #5e5d57;
+        --muted-2: #8a8982;
+        --accent: #232326;
+        --accent-soft: rgba(35, 35, 38, .08);
+        --on-accent: #f0ede7;
+      }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ============ 导航 ============ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 12, .72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-weight: 700;
+      letter-spacing: 4px;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+    .nav-logo em { color: var(--accent); font-style: normal; }
+    .nav-links { display: flex; gap: 34px; list-style: none; }
+    .nav-links a {
+      font-size: .88rem;
+      letter-spacing: 2px;
+      color: var(--muted);
+      transition: color .25s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ============ 通用 ============ */
+    section { padding: 110px 24px; position: relative; background: var(--bg); color: var(--text); }
+    .container { max-width: 1140px; margin: 0 auto; }
+    .section-head { margin-bottom: 56px; }
+    .section-tag {
+      display: inline-block;
+      font-size: .78rem;
+      letter-spacing: 6px;
+      color: var(--accent);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .section-head h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+      font-weight: 900;
+      letter-spacing: 4px;
+      line-height: 1.3;
+      color: #fff;
+    }
+    .section-head .en {
+      display: block;
+      font-family: var(--sans);
+      font-size: .8rem;
+      letter-spacing: 8px;
+      color: var(--muted-2);
+      margin-top: 8px;
+      font-weight: 400;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
+    }
+    .reveal.show { opacity: 1; transform: none; }
+
+    /* ============ Hero ============ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 100px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 18% 22%, rgba(230, 57, 70, .16), transparent 52%),
+        radial-gradient(ellipse at 82% 68%, rgba(255, 255, 255, .05), transparent 46%),
+        linear-gradient(165deg, #0d0d11 0%, #131216 55%, #0a0a0c 100%);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/workflow/首屏背景.png') center / cover no-repeat;
+      opacity: .55;
+      pointer-events: none;
+    }
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,10,12,.5) 0%, rgba(10,10,12,.75) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 900px; }
+    .hero-eyebrow {
+      font-size: .8rem;
+      letter-spacing: 8px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 11vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: 12px;
+      line-height: 1.1;
+      color: #fff;
+      text-shadow: 0 10px 50px rgba(0, 0, 0, .6);
+    }
+    .hero .hero-title {
+      margin-top: 20px;
+      font-size: clamp(1rem, 2.4vw, 1.35rem);
+      letter-spacing: 6px;
+      color: var(--text);
+      font-weight: 300;
+    }
+    .hero .hero-title strong { color: var(--accent); font-weight: 500; }
+    .hero-meta {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .hero-meta span {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .04);
+      padding: 7px 18px;
+      border-radius: 999px;
+      font-size: .85rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+    .hero-cta {
+      margin-top: 44px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      border-radius: 999px;
+      font-size: .9rem;
+      letter-spacing: 3px;
+      transition: all .3s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: 1px solid var(--accent);
+    }
+    .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+    .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, .3);
+      color: #fff;
+      background: transparent;
+    }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255, 255, 255, .06); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: .72rem;
+      letter-spacing: 4px;
+      color: var(--muted-2);
+      z-index: 1;
+    }
+
+    /* ============ 作品混剪 ============ */
+    .showreel-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #000;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .55);
+    }
+    .showreel-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .showreel-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.55) 100%);
+      cursor: pointer;
+      transition: opacity .5s;
+    }
+    .showreel-overlay.hide { opacity: 0; pointer-events: none; }
+    .showreel-overlay .play-circle {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      background: rgba(230, 57, 70, .88);
+      border: 1px solid rgba(255, 255, 255, .4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1rem;
+      color: #fff;
+      transition: transform .35s, background .35s;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+    }
+    .showreel-overlay:hover .play-circle {
+      transform: scale(1.08);
+      background: var(--accent);
+    }
+    .showreel-overlay .hint {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: .8rem;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, .75);
+    }
+    .showreel-note {
+      margin-top: 18px;
+      font-size: .85rem;
+      color: var(--muted-2);
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    /* ============ 代表项目 ============ */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .work-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .4s, border-color .4s, box-shadow .4s;
+    }
+    .work-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(230, 57, 70, .5);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .5);
+    }
+    .work-media {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--panel-2);
+    }
+    .work-media .work-emoji {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      z-index: 0;
+    }
+    .work-media img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s cubic-bezier(.16, 1, .3, 1);
+    }
+    .work-card:hover .work-media img { transform: scale(1.06); }
+    .work-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, .65) 100%);
+      pointer-events: none;
+    }
+    .work-play {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(230, 57, 70, .85);
+      border: 1px solid rgba(255, 255, 255, .4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #fff;
+      transition: transform .35s, background .35s;
+    }
+    .work-card:hover .work-play { transform: translate(-50%, -50%) scale(1.1); background: var(--accent); }
+    .work-info { padding: 26px 26px 30px; }
+    .work-num {
+      font-size: .78rem;
+      letter-spacing: 4px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .work-info h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .work-info p { color: var(--muted); font-size: .9rem; margin-bottom: 16px; }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .work-tags span {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .04);
+      color: var(--muted);
+      font-size: .76rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 1px;
+    }
+    .quark-box {
+      margin-top: 36px;
+      background: linear-gradient(135deg, rgba(230, 57, 70, .1), rgba(230, 57, 70, .03));
+      border: 1px dashed rgba(230, 57, 70, .45);
+      border-radius: var(--radius);
+      padding: 26px 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .quark-icon { font-size: 2rem; }
+    .quark-info { flex: 1; min-width: 240px; }
+    .quark-info h3 { font-size: 1.05rem; letter-spacing: 2px; margin-bottom: 4px; }
+    .quark-info p { color: var(--muted); font-size: .85rem; word-break: break-all; }
+    .quark-btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-size: .88rem;
+      letter-spacing: 2px;
+      transition: background .3s;
+      white-space: nowrap;
+    }
+    .quark-btn:hover { background: var(--accent-dark); }
+
+    /* ============ 个人信息 ============ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.4fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .about-left {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 36px;
+      text-align: center;
+    }
+    .portrait {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+    }
+    .portrait img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-left h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      letter-spacing: 4px;
+      margin-bottom: 6px;
+    }
+    .about-left .role { color: var(--accent); font-size: .9rem; letter-spacing: 3px; margin-bottom: 20px; }
+    .about-meta { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .about-meta span {
+      border: 1px solid var(--line);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+    .about-right p.bio {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 30px;
+      line-height: 2;
+    }
+    .about-block {
+      border-left: 2px solid var(--accent);
+      padding-left: 20px;
+      margin-bottom: 26px;
+    }
+    .about-block h4 {
+      font-size: .82rem;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .about-block h5 { font-size: 1.05rem; letter-spacing: 1px; margin-bottom: 4px; }
+    .about-block .time { color: var(--muted-2); font-size: .85rem; margin-bottom: 8px; }
+    .about-block p, .about-block li { color: var(--muted); font-size: .92rem; }
+    .about-block ul { padding-left: 18px; }
+    .about-block li { margin-bottom: 4px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .skill-tags span {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid var(--line);
+      padding: 7px 18px;
+      border-radius: 999px;
+      font-size: .85rem;
+      color: var(--text);
+      letter-spacing: 1px;
+    }
+
+    /* ============ 联系 ============ */
+    #contact { background: var(--bg-2); border-top: 1px solid var(--line); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .contact-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      text-align: center;
+      transition: border-color .3s, transform .3s;
+    }
+    .contact-card:hover { border-color: rgba(230, 57, 70, .5); transform: translateY(-4px); }
+    .contact-card .icon { font-size: 1.7rem; margin-bottom: 12px; }
+    .contact-card h3 { font-size: .82rem; letter-spacing: 3px; color: var(--muted); margin-bottom: 8px; }
+    .contact-card p { font-size: 1.02rem; color: #fff; word-break: break-all; }
+    .contact-cta {
+      margin-top: 48px;
+      text-align: center;
+    }
+    .contact-cta p { color: var(--muted); margin-bottom: 18px; letter-spacing: 2px; }
+
+    footer {
+      padding: 30px 24px;
+      text-align: center;
+      background: #08080a;
+      color: var(--muted-2);
+      font-size: .82rem;
+      letter-spacing: 2px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* ============ 视频弹窗 ============ */
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .video-modal.open { display: flex; }
+    .video-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .86);
+      backdrop-filter: blur(6px);
+    }
+    .video-modal-content {
+      position: relative;
+      z-index: 1;
+      width: min(980px, 100%);
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .7);
+    }
+    .video-modal-content video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #000;
+    }
+    .video-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(20, 20, 22, .8);
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background .25s;
+    }
+    .video-modal-close:hover { background: var(--accent); }
+
+
+      /* ============ 深色电影感 · 红色强调 · 衬线字体 ============ */
+      .nav-logo { font-family: var(--serif); font-weight: 700; letter-spacing: 4px; font-size: 1.05rem; }
+      .section-head h2 { font-family: var(--serif); font-weight: 900; letter-spacing: 4px; color: #fff; }
+      .hero {
+        background:
+          radial-gradient(ellipse at 18% 22%, rgba(230, 57, 70, .16), transparent 52%),
+          radial-gradient(ellipse at 82% 68%, rgba(255, 255, 255, .05), transparent 46%),
+          linear-gradient(165deg, #0d0d11 0%, #131216 55%, #0a0a0c 100%);
+      }
+      .hero h1 { font-family: var(--serif); font-weight: 900; letter-spacing: 12px; color: #fff; }
+      .hero .hero-title { letter-spacing: 6px; }
+      .hero-meta span { background: rgba(255, 255, 255, .04); border: 1px solid var(--line); color: var(--muted); }
+      .btn-primary { background: var(--accent); border: 1px solid var(--accent); color: #fff; }
+      .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+      .btn-ghost { border: 1px solid rgba(255, 255, 255, .3); color: #fff; background: transparent; }
+      .btn-ghost:hover { border-color: #fff; background: rgba(255, 255, 255, .06); }
+      .showreel-overlay .play-circle { background: rgba(230, 57, 70, .88); border: 1px solid rgba(255, 255, 255, .4); color: #fff; }
+      .showreel-overlay:hover .play-circle { background: var(--accent); transform: scale(1.08); }
+      .work-card:hover { border-color: rgba(230, 57, 70, .5); }
+      .work-play { background: rgba(230, 57, 70, .85); border: 1px solid rgba(255, 255, 255, .4); color: #fff; }
+      .work-card:hover .work-play { background: var(--accent); transform: translate(-50%, -50%) scale(1.1); }
+      .work-info h3 { font-family: var(--serif); font-weight: 700; color: #fff; }
+      .work-tags span { background: rgba(255, 255, 255, .04); border: 1px solid var(--line); color: var(--muted); }
+      .quark-box { background: linear-gradient(135deg, rgba(230, 57, 70, .1), rgba(230, 57, 70, .03)); border: 1px dashed rgba(230, 57, 70, .45); }
+      .quark-btn { background: var(--accent); color: #fff; }
+      .quark-btn:hover { background: var(--accent-dark); }
+      .about-left h3 { font-family: var(--serif); }
+      .about-meta span { background: transparent; }
+      .skill-tags span { background: rgba(255, 255, 255, .05); border: 1px solid var(--line); color: var(--text); }
+      .contact-card:hover { border-color: rgba(230, 57, 70, .5); }
+      .contact-card p { color: #fff; }
+      .video-modal-close:hover { background: var(--accent); color: #fff; }
+      footer { background: #08080a; }
+
+      /* ============ 代表项目分组 ============ */
+      .works-group { margin-bottom: 48px; }
+      .works-group:last-child { margin-bottom: 0; }
+      .works-group-title {
+        font-family: var(--serif);
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 4px;
+        color: #fff;
+        margin-bottom: 22px;
+        padding-left: 16px;
+        border-left: 4px solid var(--accent);
+      }
+      .works-group-title span {
+        font-family: var(--sans);
+        font-size: .78rem;
+        font-weight: 400;
+        letter-spacing: 4px;
+        color: var(--muted);
+        margin-left: 10px;
+      }
+
+
+      /* ============ AI 工作流快闪 ============ */
+      .workflow-scroll {
+        display: flex;
+        gap: 18px;
+        overflow-x: auto;
+        padding: 4px 24px 18px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(230, 57, 70, .6) transparent;
+      }
+      .workflow-scroll::-webkit-scrollbar { height: 6px; }
+      .workflow-scroll::-webkit-scrollbar-track { background: transparent; }
+      .workflow-scroll::-webkit-scrollbar-thumb { background: rgba(230, 57, 70, .5); border-radius: 999px; }
+      .workflow-item {
+        position: relative;
+        flex: 0 0 320px;
+        aspect-ratio: 4 / 3;
+        border-radius: 14px;
+        overflow: hidden;
+        background: var(--panel-2);
+        border: 1px solid var(--line);
+        scroll-snap-align: start;
+      }
+      .workflow-fallback {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: var(--muted);
+      }
+      .workflow-fallback span {
+        font-family: var(--serif);
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .workflow-fallback small { font-size: .82rem; letter-spacing: 2px; }
+      .workflow-item img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .workflow-item figcaption {
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        z-index: 2;
+        padding: 16px;
+        font-size: .82rem;
+        letter-spacing: 2px;
+        color: #fff;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .78));
+      }
+      .workflow-note {
+        max-width: 1140px;
+        margin: 14px auto 0;
+        padding: 0 24px;
+        font-size: .82rem;
+        color: var(--muted-2);
+        letter-spacing: 1px;
+        text-align: center;
+      }
+
+
+    /* ============ 响应式 ============ */
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: rgba(10, 10, 12, .96);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 14px 28px; border-top: 1px solid var(--line); }
+      .nav-toggle { display: block; }
+      .works-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      section { padding: 80px 20px; }
+      .hero h1 { letter-spacing: 6px; }
+        .hero { padding: 110px 20px 84px; }
+        .hero-meta span { padding: 6px 14px; font-size: .8rem; }
+        .hero-cta .btn { padding: 13px 26px; font-size: .85rem; letter-spacing: 2px; }
+        .hero-scroll { bottom: 20px; }
+        .showreel-overlay .play-circle { width: 68px; height: 68px; font-size: 1.5rem; }
+        .showreel-overlay .hint { font-size: .72rem; bottom: 14px; }
+        .work-play { width: 50px; height: 50px; font-size: 1.1rem; }
+        .workflow-scroll { padding: 4px 20px 14px; }
+        .workflow-item { flex: 0 0 280px; }
+        .quark-box { padding: 22px 20px; }
+        .quark-btn { padding: 11px 22px; font-size: .82rem; }
+        .contact-card { padding: 24px 18px; }
+        .about-left { padding: 28px 22px; }
+        .portrait { width: 120px; height: 120px; font-size: 2.6rem; }
+        .video-modal { padding: 14px; }
+        .video-modal-content { border-radius: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 导航 -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo">LIU<em>WEILI</em></span>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#showreel">作品混剪</a></li>
+        <li><a href="#projects">代表项目</a></li>
+          <li><a href="#workflow">AI工作流</a></li>
+        <li><a href="#about">个人信息</a></li>
+        <li><a href="#contact">联系方式</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 首屏 -->
+  <header class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">DIRECTOR · SCREENWRITER · PORTFOLIO</p>
+      <h1>刘维丽</h1>
+      <p class="hero-title">导演 / 编导 · <strong>用镜头讲故事</strong></p>
+      <div class="hero-meta">
+        <span>女 · 25岁</span>
+        <span>2 年工作经验</span>
+        <span>杭州</span>
+        <span>期望薪资 15-22K</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#showreel">观看作品混剪</a>
+        <a class="btn btn-ghost" href="#contact">联系我</a>
+      </div>
+    </div>
+    <div class="hero-scroll">SCROLL ↓</div>
+  </header>
+
+  <!-- 作品混剪 -->
+  <section id="showreel">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">SHOWREEL</span>
+        <h2>作品混剪</h2>
+        <span class="en">AICG SHOWREEL 2025</span>
+      </div>
+      <div class="showreel-frame reveal">
+        <video id="showreelVideo" src="assets/首页视频/横屏短剧试稿 (3).mp4" poster="assets/首页视频/封面.png" controls preload="metadata" playsinline></video>
+        <div class="showreel-overlay" id="showreelOverlay">
+          <div class="play-circle">▶</div>
+          <span class="hint">点击播放混剪</span>
+        </div>
+      </div>
+      <p class="showreel-note">作品混剪已接入「首页视频/横屏短剧试稿 (3).mp4」与封面，点击中间播放按钮即可播放</p>
+    </div>
+  </section>
+
+  <!-- 代表项目 -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">SELECTED WORKS</span>
+        <h2>代表项目</h2>
+        <span class="en">导演 / 全流程交付 / AI 辅助制作</span>
+      </div>
+
+        <div class="works-group reveal">
+          <h3 class="works-group-title">横屏作品 <span>HORIZONTAL</span></h3>
+      <div class="works-grid">
+        <!-- 项目 1 -->
+        <div class="work-card reveal" data-video="assets/作品 1 - 竖屏短片（独立执导）/横屏短剧试稿 (2).mp4" data-poster="assets/作品 1 - 竖屏短片（独立执导）/项目1-封面.png">
+          <div class="work-media">
+            <span class="work-emoji">🎬</span>
+            <img src="assets/作品 1 - 竖屏短片（独立执导）/项目1-封面.png" alt="横屏短片封面" onerror="this.style.display='none'">
+            <span class="work-play">▶</span>
+          </div>
+          <div class="work-info">
+            <div class="work-num">01 / HORIZONTAL SHORT FILM</div>
+            <h3>横屏短片 · 独立执导</h3>
+            <p>独立完成 1 部横屏短片，负责从策划、脚本到拍摄、后期交付的全流程制作。</p>
+            <div class="work-tags"><span>横屏</span><span>全流程交付</span><span>独立完成</span></div>
+          </div>
+        </div>
+
+        <!-- 项目 2 -->
+        <div class="work-card reveal" data-video="assets/作品 2 - 横屏短片 x 3（独立执导）/白日黑夜-1080P.mp4" data-poster="assets/作品 2 - 横屏短片 x 3（独立执导）/项目2-封面.png">
+          <div class="work-media">
+            <span class="work-emoji">🎥</span>
+            <img src="assets/作品 2 - 横屏短片 x 3（独立执导）/项目2-封面.png" alt="横屏短片封面" onerror="this.style.display='none'">
+            <span class="work-play">▶</span>
+          </div>
+          <div class="work-info">
+            <div class="work-num">02 / HORIZONTAL SHORT FILM</div>
+            <h3>横屏短片 × 3 · 独立执导</h3>
+            <p>独立完成 3 部横屏短片，负责项目评估、脚本创作、资产生成与后期制作。</p>
+            <div class="work-tags"><span>横屏</span><span>全流程交付</span><span>独立完成</span></div>
+          </div>
+        </div>
+
+        <!-- 项目 3 -->
+        <div class="work-card reveal" data-video="assets/作品 3 - 微电影 x 2（独立执导）/狂猎48.mp4" data-poster="assets/作品 3 - 微电影 x 2（独立执导）/项目3-微电影.png">
+          <div class="work-media">
+            <span class="work-emoji">🎞️</span>
+            <img src="assets/作品 3 - 微电影 x 2（独立执导）/项目3-微电影.png" alt="微电影封面" onerror="this.style.display='none'">
+            <span class="work-play">▶</span>
+          </div>
+          <div class="work-info">
+            <div class="work-num">03 / MICRO FILM</div>
+            <h3>微电影 × 2 · 独立执导</h3>
+            <p>独立完成 2 部微电影，涵盖人员排期、提示词优化、后期剪辑修改及客户交付。</p>
+            <div class="work-tags"><span>微电影</span><span>全流程交付</span><span>独立完成</span></div>
+          </div>
+        </div>
+
+        <!-- 项目 4 -->
+        <div class="work-card reveal" data-video="assets/作品 4 - 竖屏短片/横屏短剧试稿 (1).mp4" data-poster="assets/作品 4 - 竖屏短片/项目4-封面.png">
+          <div class="work-media">
+            <span class="work-emoji">🤝</span>
+            <img src="assets/作品 4 - 竖屏短片/项目4-封面.png" alt="横屏短剧封面" onerror="this.style.display='none'">
+            <span class="work-play">▶</span>
+          </div>
+          <div class="work-info">
+            <div class="work-num">04 / COLLABORATION</div>
+            <h3>横屏短剧 · 参与创作与指导</h3>
+            <p>参与 1 部横屏短剧的创作与指导，配合团队完成内容打磨与落地执行。</p>
+            <div class="work-tags"><span>横屏</span><span>创作指导</span><span>团队协作</span></div>
+          </div>
+        </div>
+      </div>
+        </div>
+
+        <div class="works-group reveal">
+          <h3 class="works-group-title">竖屏作品 <span>VERTICAL</span></h3>
+          <div class="works-grid">
+            <div class="work-card reveal" data-video="assets/作品5-竖屏短片-西幻/西幻类试稿.mp4" data-poster="assets/作品5-竖屏短片-西幻/项目1-封面.png">
+              <div class="work-media">
+                <span class="work-emoji">🔮</span>
+                <img src="assets/作品5-竖屏短片-西幻/项目1-封面.png" alt="竖屏短片西幻封面" onerror="this.style.display='none'">
+                <span class="work-play">▶</span>
+              </div>
+              <div class="work-info">
+                <div class="work-num">05 / VERTICAL · FANTASY</div>
+                <h3>竖屏短片 · 西幻</h3>
+                <p>竖屏西幻类短片试稿，独立完成策划与制作。</p>
+                <div class="work-tags"><span>竖屏</span><span>西幻</span><span>独立完成</span></div>
+              </div>
+            </div>
+            <div class="work-card reveal" data-video="assets/作品6-竖屏短片-动作/EP1 .mp4" data-poster="assets/作品6-竖屏短片-动作/项目6-封面.png">
+              <div class="work-media">
+                <span class="work-emoji">⚔️</span>
+                <img src="assets/作品6-竖屏短片-动作/项目6-封面.png" alt="竖屏短片动作封面" onerror="this.style.display='none'">
+                <span class="work-play">▶</span>
+              </div>
+              <div class="work-info">
+                <div class="work-num">06 / VERTICAL · ACTION</div>
+                <h3>竖屏短片 · 动作</h3>
+                <p>竖屏动作类短片试稿，独立完成策划与制作。</p>
+                <div class="work-tags"><span>竖屏</span><span>动作</span><span>独立完成</span></div>
+              </div>
+            </div>
+            <div class="work-card reveal" data-video="assets/作品7-竖屏短片-魔幻/精灵.mp4" data-poster="assets/作品7-竖屏短片-魔幻/项目7-封面.png">
+              <div class="work-media">
+                <span class="work-emoji">🌙</span>
+                <img src="assets/作品7-竖屏短片-魔幻/项目7-封面.png" alt="竖屏短片魔幻封面" onerror="this.style.display='none'">
+                <span class="work-play">▶</span>
+              </div>
+              <div class="work-info">
+                <div class="work-num">07 / VERTICAL · MAGIC</div>
+                <h3>竖屏短片 · 魔幻</h3>
+                <p>竖屏魔幻类短片试稿，独立完成策划与制作。</p>
+                <div class="work-tags"><span>竖屏</span><span>魔幻</span><span>独立完成</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- 夸克网盘完整作品集 -->
+      <div class="quark-box reveal">
+        <div class="quark-icon">📥</div>
+        <div class="quark-info">
+          <h3>AICG 项目作品集（完整版）</h3>
+          <p>夸克网盘分享 · 访问码：/~46a43acRvg~:/ · 链接：https://pan.quark.cn/s/1bdf061c161e</p>
+        </div>
+        <a class="quark-btn" href="https://pan.quark.cn/s/1bdf061c161e" target="_blank" rel="noopener">打开夸克网盘</a>
+      </div>
+    </div>
+  </section>
+
+    <!-- AI 工作流快闪 -->
+    <section id="workflow">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">AI WORKFLOW</span>
+          <h2>AI 工作流快闪</h2>
+          <span class="en">AI 辅助内容生产全流程</span>
+        </div>
+      </div>
+      <div class="workflow-scroll reveal">
+        <figure class="workflow-item">
+          <div class="workflow-fallback"><span>01</span><small>项目管理</small></div>
+          <img src="assets/workflow/项目管理.png" alt="AI 工作流 - 项目管理" onerror="this.style.display='none'">
+          <figcaption>01 · 项目管理</figcaption>
+        </figure>
+        <figure class="workflow-item">
+          <div class="workflow-fallback"><span>02</span><small>剧本创作</small></div>
+          <img src="assets/workflow/剧本创作.png" alt="AI 工作流 - 剧本创作" onerror="this.style.display='none'">
+          <figcaption>02 · 剧本创作</figcaption>
+        </figure>
+        <figure class="workflow-item">
+          <div class="workflow-fallback"><span>03</span><small>资产生成</small></div>
+          <img src="assets/workflow/资产生成.png" alt="AI 工作流 - 资产生成" onerror="this.style.display='none'">
+          <figcaption>03 · 资产生成</figcaption>
+        </figure>
+        <figure class="workflow-item">
+          <div class="workflow-fallback"><span>04</span><small>提示词优化</small></div>
+          <img src="assets/workflow/提示词优化.png" alt="AI 工作流 - 提示词优化" onerror="this.style.display='none'">
+          <figcaption>04 · 提示词优化</figcaption>
+        </figure>
+        <figure class="workflow-item">
+          <div class="workflow-fallback"><span>05</span><small>后期制作</small></div>
+          <img src="assets/workflow/后期制作.png" alt="AI 工作流 - 后期制作" onerror="this.style.display='none'">
+          <figcaption>05 · 后期制作</figcaption>
+        </figure>
+        <figure class="workflow-item">
+          <div class="workflow-fallback"><span>06</span><small>视频生成</small></div>
+          <img src="assets/workflow/视频生成.png" alt="AI 工作流 - 视频生成" onerror="this.style.display='none'">
+          <figcaption>06 · 视频生成</figcaption>
+        </figure>
+      </div>
+      <p class="workflow-note">截图已自动匹配：项目管理 · 剧本创作 · 资产生成 · 提示词优化 · 后期制作 · 视频生成（左右滑动查看）</p>
+    </section>
+
+
+  <!-- 个人信息 -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">ABOUT ME</span>
+        <h2>个人信息</h2>
+        <span class="en">导演 / 编导 · 2 年经验 · 杭州</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <div class="portrait">
+            <span>🎬</span>
+            <img src="assets/profile.jpg" alt="刘维丽" onerror="this.style.display='none'">
+          </div>
+          <h3>刘维丽</h3>
+          <p class="role">导演 / 编导</p>
+          <div class="about-meta">
+            <span>女 · 25岁</span>
+            <span>2 年工作经验</span>
+            <span>期望城市：杭州</span>
+            <span>期望薪资：15-22K</span>
+          </div>
+        </div>
+
+        <div class="about-right reveal">
+          <p class="bio">喜欢且擅长做从 0 到 1 的事情。有敏锐的内容洞察与创意想法，专注短视频与微电影创作，具备脚本撰写能力与良好的镜头感，熟悉 AI 辅助内容生产全流程。</p>
+
+          <div class="about-block">
+            <h4>WORK EXPERIENCE</h4>
+            <h5>杭州天启映画影视科技有限公司 · 导演/编导</h5>
+            <p class="time">2025.03 — 至今</p>
+            <ul>
+              <li>管理项目并评估可行性，统筹各方沟通、项目周期与交片时间。</li>
+              <li>负责资产制作、人员排期、提示词优化、后期剪辑修改及客户交付对接。</li>
+              <li>主导一键式剧本创作，利用 AI 辅助设计优化工作流与分工。</li>
+            </ul>
+          </div>
+
+          <div class="about-block">
+            <h4>EDUCATION</h4>
+            <h5>中国美术学院 · 本科</h5>
+            <p class="time">2020 — 2024 · 专业排名前 30%</p>
+          </div>
+
+          <div class="about-block">
+            <h4>STRENGTHS</h4>
+            <div class="skill-tags">
+              <span>从 0 到 1</span>
+              <span>敏锐洞察</span>
+              <span>创意想法</span>
+              <span>脚本撰写</span>
+              <span>镜头感</span>
+              <span>短视频导演</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系方式 -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">CONTACT</span>
+        <h2>联系方式</h2>
+        <span class="en">期待与您交流合作</span>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="icon">📧</div>
+          <h3>邮箱</h3>
+          <p>3501864891@qq.com</p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="icon">📱</div>
+          <h3>电话</h3>
+          <p>15990116162</p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="icon">💬</div>
+          <h3>微信</h3>
+          <p>15990116162</p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="icon">📍</div>
+          <h3>所在城市</h3>
+          <p>杭州</p>
+        </div>
+      </div>
+
+      <div class="contact-cta reveal">
+        <p>有合适的项目机会，欢迎随时联系</p>
+        <a class="btn btn-primary" href="mailto:3501864891@qq.com">发送邮件</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 刘维丽 LIU WEILI · DIRECTOR PORTFOLIO</footer>
+
+  <!-- 视频弹窗 -->
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-modal-backdrop" id="modalBackdrop"></div>
+    <div class="video-modal-content">
+      <button class="video-modal-close" id="modalClose" aria-label="关闭">✕</button>
+      <video id="modalVideo" controls playsinline preload="metadata"></video>
+    </div>
+  </div>
+
+  <script>
+    // 移动端菜单
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // 作品混剪播放
+    const showreelVideo = document.getElementById('showreelVideo');
+    const showreelOverlay = document.getElementById('showreelOverlay');
+    showreelOverlay.addEventListener('click', () => {
+      showreelOverlay.classList.add('hide');
+      showreelVideo.play().catch(() => {});
+    });
+    showreelVideo.addEventListener('pause', () => {
+      if (showreelVideo.currentTime > 0 && showreelVideo.currentTime < showreelVideo.duration - 0.5) {
+        showreelOverlay.classList.remove('hide');
+      }
+    });
+
+    // 代表项目视频弹窗
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalClose = document.getElementById('modalClose');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+
+    function openVideo(src) {
+      modalVideo.src = src;
+      videoModal.classList.add('open');
+      videoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modalVideo.play().catch(() => {});
+    }
+    function closeVideo() {
+      videoModal.classList.remove('open');
+      videoModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      modalVideo.pause();
+      modalVideo.removeAttribute('src');
+      modalVideo.load();
+    }
+
+    document.querySelectorAll('.work-card[data-video]').forEach(card => {
+      card.addEventListener('click', () => openVideo(card.getAttribute('data-video')));
+    });
+    modalClose.addEventListener('click', closeVideo);
+    modalBackdrop.addEventListener('click', closeVideo);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && videoModal.classList.contains('open')) closeVideo();
+    });
+
+    // 滚动出现动画
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
