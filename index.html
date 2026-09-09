@@ -824,13 +824,13 @@
         <span class="en">AICG SHOWREEL 2025</span>
       </div>
       <div class="showreel-frame reveal">
-        <video id="showreelVideo" src="作品 3 - 微电影 X2（独立执导）/狂猎48.mp4" poster="assets/workflow/首屏背景.png" controls preload="metadata" playsinline></video>
+        <video id="showreelVideo" src="assets/首页视频/横屏短剧试稿3.mp4" poster="assets/首页视频/封面.png" controls preload="metadata" playsinline></video>
         <div class="showreel-overlay" id="showreelOverlay">
           <div class="play-circle">▶</div>
           <span class="hint">点击播放混剪</span>
         </div>
       </div>
-      <p class="showreel-note">作品混剪已接入「微电影 · 狂猎48」作为展示视频，点击中间播放按钮即可播放</p>
+      <p class="showreel-note">作品混剪已接入「首页视频/横屏短剧试稿3.mp4」与封面，点击中间播放按钮即可播放</p>
     </div>
   </section>
 
@@ -1161,7 +1161,7 @@
         showreelVideo.addEventListener('error', () => {
         if (!showreelVideo.dataset.tried) {
           showreelVideo.dataset.tried = '1';
-          showreelVideo.src = 'assets/作品 3 - 微电影 X2（独立执导）/狂猎48.mp4';
+          showreelVideo.src = '首页视频/横屏短剧试稿3.mp4';
         }
       });
 
