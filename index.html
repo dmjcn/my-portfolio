@@ -763,6 +763,18 @@
         .video-modal-content { border-radius: 10px; }
     }
   </style>
+  <script>
+    // 图片加载失败时，自动尝试备用路径（assets 与根目录各试一次）
+    window.imgFallback = function (img) {
+      const alt = img.getAttribute('data-alt');
+      if (alt && !img.dataset.tried) {
+        img.dataset.tried = '1';
+        img.src = alt;
+      } else {
+        img.style.display = 'none';
+      }
+    };
+  </script>
 </head>
 <body>
 
@@ -835,10 +847,10 @@
           <h3 class="works-group-title">横屏作品 <span>HORIZONTAL</span></h3>
       <div class="works-grid">
         <!-- 项目 1 -->
-        <div class="work-card reveal" data-video="assets/作品 1 - 竖屏短片（独立执导）/横屏短剧试稿 (2).mp4" data-poster="assets/作品 1 - 竖屏短片（独立执导）/项目1-封面.png">
+        <div class="work-card reveal" data-video="assets/作品 1 - 竖屏短片（独立执导）/横屏短剧试稿 (2).mp4" data-video-alt="作品 1 - 竖屏短片（独立执导）/横屏短剧试稿 (2).mp4" data-poster="assets/作品 1 - 竖屏短片（独立执导）/项目1-封面.png">
           <div class="work-media">
             <span class="work-emoji">🎬</span>
-            <img src="assets/作品 1 - 竖屏短片（独立执导）/项目1-封面.png" alt="横屏短片封面" onerror="this.style.display='none'">
+            <img src="assets/作品 1 - 竖屏短片（独立执导）/项目1-封面.png" data-alt="作品 1 - 竖屏短片（独立执导）/项目1-封面.png" alt="横屏短片封面" onerror="imgFallback(this)">
             <span class="work-play">▶</span>
           </div>
           <div class="work-info">
@@ -865,10 +877,10 @@
         </div>
 
         <!-- 项目 3 -->
-        <div class="work-card reveal" data-video="作品 3 - 微电影 X2（独立执导）/狂猎48.mp4" data-poster="作品 3 - 微电影 X2（独立执导）/项目3-微电影.png">
+        <div class="work-card reveal" data-video="作品 3 - 微电影 X2（独立执导）/狂猎48.mp4" data-video-alt="assets/作品 3 - 微电影 X2（独立执导）/狂猎48.mp4" data-poster="作品 3 - 微电影 X2（独立执导）/项目3-微电影.png">
           <div class="work-media">
             <span class="work-emoji">🎞️</span>
-            <img src="作品 3 - 微电影 X2（独立执导）/项目3-微电影.png" alt="微电影封面" onerror="this.style.display='none'">
+            <img src="作品 3 - 微电影 X2（独立执导）/项目3-微电影.png" data-alt="assets/作品 3 - 微电影 X2（独立执导）/项目3-微电影.png" alt="微电影封面" onerror="imgFallback(this)">
             <span class="work-play">▶</span>
           </div>
           <div class="work-info">
@@ -880,10 +892,10 @@
         </div>
 
         <!-- 项目 4 -->
-        <div class="work-card reveal" data-video="assets/作品 4 - 竖屏短片/横屏短剧试稿 (1).mp4" data-poster="assets/作品 4 - 竖屏短片/项目4-封面.png">
+        <div class="work-card reveal" data-video="assets/作品 4 - 竖屏短片/横屏短剧试稿 (1).mp4" data-video-alt="作品 4 - 竖屏短片/横屏短剧试稿 (1).mp4" data-poster="assets/作品 4 - 竖屏短片/项目4-封面.png">
           <div class="work-media">
             <span class="work-emoji">🤝</span>
-            <img src="assets/作品 4 - 竖屏短片/项目4-封面.png" alt="横屏短剧封面" onerror="this.style.display='none'">
+            <img src="assets/作品 4 - 竖屏短片/项目4-封面.png" data-alt="作品 4 - 竖屏短片/项目4-封面.png" alt="横屏短剧封面" onerror="imgFallback(this)">
             <span class="work-play">▶</span>
           </div>
           <div class="work-info">
@@ -895,10 +907,10 @@
         </div>
 
           <!-- 项目 8 -->
-          <div class="work-card reveal" data-video="assets/作品8-横屏短片-科幻/南天门试稿.mp4" data-poster="assets/作品8-横屏短片-科幻/项目8-封面.png">
+          <div class="work-card reveal" data-video="assets/作品8-横屏短片-科幻/南天门试稿.mp4" data-video-alt="作品8-横屏短片-科幻/南天门试稿.mp4" data-poster="assets/作品8-横屏短片-科幻/项目8-封面.png">
             <div class="work-media">
               <span class="work-emoji">🚀</span>
-              <img src="assets/作品8-横屏短片-科幻/项目8-封面.png" alt="横屏短片科幻封面" onerror="this.style.display='none'">
+              <img src="assets/作品8-横屏短片-科幻/项目8-封面.png" data-alt="作品8-横屏短片-科幻/项目8-封面.png" alt="横屏短片科幻封面" onerror="imgFallback(this)">
               <span class="work-play">▶</span>
             </div>
             <div class="work-info">
@@ -914,10 +926,10 @@
         <div class="works-group reveal">
           <h3 class="works-group-title">竖屏作品 <span>VERTICAL</span></h3>
           <div class="works-grid">
-            <div class="work-card reveal" data-video="作品5-竖屏短片-西幻/西幻类试稿.mp4" data-poster="作品5-竖屏短片-西幻/项目1-封面.png">
+            <div class="work-card reveal" data-video="作品5-竖屏短片-西幻/西幻类试稿.mp4" data-video-alt="assets/作品5-竖屏短片-西幻/西幻类试稿.mp4" data-poster="作品5-竖屏短片-西幻/项目1-封面.png">
               <div class="work-media">
                 <span class="work-emoji">🔮</span>
-                <img src="作品5-竖屏短片-西幻/项目1-封面.png" alt="竖屏短片西幻封面" onerror="this.style.display='none'">
+                <img src="作品5-竖屏短片-西幻/项目1-封面.png" data-alt="assets/作品5-竖屏短片-西幻/项目1-封面.png" alt="竖屏短片西幻封面" onerror="imgFallback(this)">
                 <span class="work-play">▶</span>
               </div>
               <div class="work-info">
@@ -940,10 +952,10 @@
                 <div class="work-tags"><span>竖屏</span><span>动作</span><span>独立完成</span></div>
               </div>
             </div>
-            <div class="work-card reveal" data-video="作品7-竖屏短片-魔幻/精灵.mp4" data-poster="作品7-竖屏短片-魔幻/项目7-封面.png">
+            <div class="work-card reveal" data-video="作品7-竖屏短片-魔幻/精灵.mp4" data-video-alt="assets/作品7-竖屏短片-魔幻/精灵.mp4" data-poster="作品7-竖屏短片-魔幻/项目7-封面.png">
               <div class="work-media">
                 <span class="work-emoji">🌙</span>
-                <img src="作品7-竖屏短片-魔幻/项目7-封面.png" alt="竖屏短片魔幻封面" onerror="this.style.display='none'">
+                <img src="作品7-竖屏短片-魔幻/项目7-封面.png" data-alt="assets/作品7-竖屏短片-魔幻/项目7-封面.png" alt="竖屏短片魔幻封面" onerror="imgFallback(this)">
                 <span class="work-play">▶</span>
               </div>
               <div class="work-info">
@@ -1133,8 +1145,28 @@
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
 
+      // 图片路径回退：assets 和根目录各试一次
+      function imgFallback(img) {
+        const alt = img.getAttribute('data-alt');
+        if (alt && !img.dataset.tried) {
+          img.dataset.tried = '1';
+          img.src = alt;
+        } else {
+          img.style.display = 'none';
+        }
+      }
+
+      // 混剪视频路径回退
+      const showreelVideo = document.getElementById('showreelVideo');
+        showreelVideo.addEventListener('error', () => {
+        if (!showreelVideo.dataset.tried) {
+          showreelVideo.dataset.tried = '1';
+          showreelVideo.src = '首页视频/横屏短剧试稿 (3).mp4';
+        }
+      });
+
     // 作品混剪播放
-    const showreelVideo = document.getElementById('showreelVideo');
+    // const showreelVideo already declared above
     const showreelOverlay = document.getElementById('showreelOverlay');
     showreelOverlay.addEventListener('click', () => {
       showreelOverlay.classList.add('hide');
@@ -1152,13 +1184,25 @@
     const modalClose = document.getElementById('modalClose');
     const modalBackdrop = document.getElementById('modalBackdrop');
 
-    function openVideo(src) {
+    function openVideo(src, altSrc) {
       modalVideo.src = src;
+        modalVideo.dataset.alt = altSrc || '';
+        modalVideo.dataset.tried = '';
       videoModal.classList.add('open');
       videoModal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
       modalVideo.play().catch(() => {});
     }
+
+      // 视频加载失败时，尝试备用路径（assets 与根目录各试一次）
+      modalVideo.addEventListener('error', () => {
+        const alt = modalVideo.dataset.alt;
+        if (alt && !modalVideo.dataset.tried) {
+          modalVideo.dataset.tried = '1';
+          modalVideo.src = alt;
+          modalVideo.play().catch(() => {});
+        }
+      });
     function closeVideo() {
       videoModal.classList.remove('open');
       videoModal.setAttribute('aria-hidden', 'true');
@@ -1169,7 +1213,7 @@
     }
 
     document.querySelectorAll('.work-card[data-video]').forEach(card => {
-      card.addEventListener('click', () => openVideo(card.getAttribute('data-video')));
+      card.addEventListener('click', () => openVideo(card.getAttribute('data-video'), card.getAttribute('data-video-alt')));
     });
     modalClose.addEventListener('click', closeVideo);
     modalBackdrop.addEventListener('click', closeVideo);
